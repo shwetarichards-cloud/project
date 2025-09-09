@@ -1,5 +1,4 @@
 import React from "react";
-import reactLogo from "../assets/react-logo.png";
 
 const ClientsPage = () => {
   // Web App client logos
