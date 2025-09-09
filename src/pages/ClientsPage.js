@@ -1,6 +1,28 @@
 import React from "react";
 import ReactLogo from "../assets/React-icon.svg";
 
+// ✅ Reusable LogoGrid with fallback
+const LogoGrid = ({ logos }) => (
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center">
+    {logos.map((logo, index) => (
+      <div
+        key={index}
+        className="flex justify-center items-center bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition-all"
+      >
+        <img
+          src={logo.src}
+          alt={logo.alt}
+          title={logo.alt}
+          className="h-16 object-contain"
+          onError={(e) => {
+            e.currentTarget.src = ReactLogo; // ✅ fallback to local React logo
+          }}
+        />
+      </div>
+    ))}
+  </div>
+);
+
 const ClientsPage = () => {
   // Web App client logos
   const webLogos = [
@@ -26,8 +48,8 @@ const ClientsPage = () => {
       alt: "YouTube",
     },
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023.svg",
-      alt: "Twitter",
+      src: "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg", // X (Twitter)
+      alt: "X (Twitter)",
     },
   ];
 
@@ -45,38 +67,18 @@ const ClientsPage = () => {
 
       {/* Web Apps Section */}
       <div className="container mx-auto px-6 mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">
           Web App Clients
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center">
-          {webLogos.map((logo, index) => (
-            <div key={index} className="flex justify-center">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="h-16 object-contain hover:scale-110 transition-transform"
-              />
-            </div>
-          ))}
-        </div>
+        <LogoGrid logos={webLogos} />
       </div>
 
       {/* Mobile Apps Section */}
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">
           Mobile App Clients
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center">
-          {mobileLogos.map((logo, index) => (
-            <div key={index} className="flex justify-center">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="h-16 object-contain hover:scale-110 transition-transform"
-              />
-            </div>
-          ))}
-        </div>
+        <LogoGrid logos={mobileLogos} />
       </div>
     </div>
   );
