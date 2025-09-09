@@ -1,19 +1,34 @@
 import React from "react";
-import reactLogo from "../assets/react-logo.png";
+import ReactLogo from "../assets/React-icon.svg";
 
 const ClientsPage = () => {
   // Web App client logos
   const webLogos = [
-    { src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg", alt: "Netflix" },
-    { src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg", alt: "Amazon" },
-    { src: reactLogo, alt: "React (Local)" },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+      alt: "Netflix",
+    },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+      alt: "Amazon",
+    },
+    { src: ReactLogo, alt: "React (Local)" },
   ];
 
   // Mobile App client logos
   const mobileLogos = [
-    { src: "https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg", alt: "Instagram" },
-    { src: "https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg", alt: "YouTube" },
-    { src: "https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023.svg", alt: "Twitter" },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg",
+      alt: "Instagram",
+    },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg",
+      alt: "YouTube",
+    },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023.svg",
+      alt: "Twitter",
+    },
   ];
 
   return (
